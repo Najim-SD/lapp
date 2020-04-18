@@ -20,3 +20,5 @@ Route::get('/services', "PagesController@services");
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::resource('posts', 'PostsController');
