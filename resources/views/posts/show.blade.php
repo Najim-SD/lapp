@@ -11,6 +11,7 @@
         {!!Form::close()!!}
 
         <h2 style="text-align:center"> <u> {{$post->title}} </u> </h2>
+        <h5> - by :  <?php use App\User; echo User::find($post->user_id)->name; ?> </h5>
         <p> {!!$post->body!!} </p>
         <hr>
         <small> - Created on {{$post->created_at}} </small>
