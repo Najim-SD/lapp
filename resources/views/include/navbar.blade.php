@@ -26,10 +26,10 @@
               @if (Auth::guest())
                 <li><a href="/">Home</a></li>
               @else
-                <li> <a href="/dashboard"> Dashboard </a> </li>
+                <li> <a href="/dashboard"> {{Auth::user()->name}} </a> </li>
               @endif
-              <li><a href="/services">Services</a></li>
               <li><a href="/posts">Posts</a></li>
+              <li><a href="/services">Services</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

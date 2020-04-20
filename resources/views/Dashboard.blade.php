@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-20 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading"><h4><b>Dashboard</b></h4></div>
                 <div class="panel-body">
                     @if(count($posts) > 0)
                     <h3> your posts : </h3>
