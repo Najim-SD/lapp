@@ -13,6 +13,12 @@
         @endif
         <h2 style="text-align:center"> <u> {{$post->title}} </u> </h2>
         <h5> - by : {{$post->user->name}} </h5>
+        @if($post->cover_image != "default.png")
+            <h4 style="text-align:center">
+                <img src="/storage/cover_images/{{$post->cover_image}}" style="width:100%;">
+            </h4>
+            <hr>
+        @endif
         <p> {!!$post->body!!} </p>
         <hr>
         <small> - Created on {{$post->created_at}} </small>
