@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
+        if(!auth()->guest()){
+            return redirect('dashboard');
+        }
         $title = "Hello";
         return view("pages.index")->with("title", $title);
     }
