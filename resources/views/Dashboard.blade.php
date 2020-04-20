@@ -7,7 +7,30 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
-                    <h3> your posts : </h3>                    
+                    @if(count($posts) > 0)
+                    <h3> your posts : </h3>
+                    <table class="table table-striped">
+                        <tr style="background-color: #AAAAFF"> 
+                            <th> Title </th>
+                            <th> Edit </th>
+                            <th> Delete </th>
+                        </tr>
+                        @foreach ($posts as $post)
+                        <tr>
+                            <td> <a href="/posts/{{$post->id}}"> {{$post->title}} </a> </td>
+                            <td> <a class="btn btn-default" href="/posts/{{$post->id}}/edit"> Edit </a> </td>
+                            <td> 
+                                {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST'])!!}
+                                {{Form::hidden('_method', 'DELETE')}}
+                                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                                {!!Form::close()!!} 
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>
+                    @else
+                        <h3> You don't have any posts yet :( </h3>
+                    @endif
                 </div>
             </div>
         </div>
