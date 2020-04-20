@@ -7,13 +7,13 @@
             <div class="well" style="padding-top:0px; padding-bottom:2px;">
                 <div class="row">
                     @if($post->cover_image != "default.png")
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-sm-2" style="padding:0px; top:50%;">
                             <a href="/posts/{{$post->id}}">
-                                <img src="/storage/cover_images/{{$post->cover_image}}" style="width:30%">
+                                <img src="/storage/cover_images/{{$post->cover_image}}" style="width:100%;">
                             </a>
                         </div>
                     @endif
-                    <div class="col-md-8 col-sm-8">
+                    <div class="col-sm-10">
                         <h3> <a href="/posts/{{$post->id}}"> {{$post->title}} </a> </h3>
                         <small> - by : {{$post->user->name}}  - Created on {{$post->created_at}} </small>
                     </div>
