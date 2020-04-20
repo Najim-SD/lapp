@@ -6,7 +6,7 @@
         @foreach ($posts as $post)
             <div class="well" style="padding-top:0px; padding-bottom:2px;">
                 <h3> <a href="/posts/{{$post->id}}"> {{$post->title}} </a> </h3>
-                <small> - by :  - Created on {{$post->created_at}} </small>
+                <small> - by : {{$post->user->name}}  - Created on {{$post->created_at}} </small>
             </div>
         @endforeach
         {{$posts->links()}}
